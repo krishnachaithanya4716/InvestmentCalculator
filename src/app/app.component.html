@@ -1,1 +1,13 @@
-<h1 class="center">Practice Time!</h1>
+<app-header></app-header>
+
+<app-user-input (add)="onCalculate($event)"></app-user-input>
+
+
+<app-investment-results *ngIf="showResult; else result" [InvestmentData] = "annualData"></app-investment-results>
+
+
+<ng-template #result>
+    <p class="center">Calculate to see the investment results</p>
+</ng-template>
+
+
